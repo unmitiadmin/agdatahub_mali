@@ -51,12 +51,12 @@ body a:hover {
 }
 
 .navbar-brand span {
-    color: #FFC107;
-    font-size: 14px;
+    color: #fff;
+    font-size: 35px;
     display: block;
-    line-height: 20px;
+    line-height: 42px;
     letter-spacing: 2px;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: capitalize;
     text-align: center;
 }
@@ -238,9 +238,13 @@ a {
 
 /*--header--*/
 
-.header-main {
+/* .header-main {
     background: rgba(0, 0, 0, 0.2);
     background: #069E54 !important;
+    padding: 0px 0px;
+} */
+.header-main {
+    background: #105492!important;
     padding: 0px 0px;
 }
 
@@ -483,14 +487,14 @@ ul.nav.navbar-nav {
     padding: 15px 30px!important;
 } */
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #F2A422!important;
+    color: #105492!important;
     font-family: 'Cabin', sans-serif;
     font-size: 14px !important;
     font-style: normal;
     border: 0px;
     font-weight: 700;
     line-height: 47px !important;
-    border-bottom: 2px solid #F2A422!important;
+    border-bottom: t2px solid #105492!important;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -960,7 +964,7 @@ display: none;
 }
 
 .btn-advisory {
-    background: #F2A422!important;
+    background: #105492!important;
     color: #FFFFFF !important;
     padding: 0.65em 2em !important;
     border: none !important;
@@ -1099,7 +1103,7 @@ display: none;
 }
 
 .list-box:has(.item.active) {
-    background-color: #fffaec;
+    background-color: #dff0ff;
 }
 .list-box {
     margin: 5px 0px;
@@ -1122,7 +1126,7 @@ display: none;
 }
 
 .item.active {
-    background-color: #F2A422!important;
+    background-color: #105492!important;
     font-weight: 600;
     padding: 10px 40px;
     color: #fff;
@@ -1161,14 +1165,14 @@ display: none;
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    color: #F2A422!important;
+    color: #105492!important;
     font-family: 'Cabin', sans-serif;
     font-size: 14px !important;
     font-style: normal;
     border: 0px;
     font-weight: 700;
     line-height: 47px !important;
-    border-bottom: 2px solid #F2A422;
+    border-bottom: 2px solid #105492;
 }
 
 .leftmenu-tab-box {
@@ -1295,7 +1299,7 @@ display: none;
 }
 
 .bg-secondary-1 {
-    background: #f2a422!important;
+    background: #105492!important;
     padding: 13px !important;
 }
 
@@ -1541,8 +1545,8 @@ label {
     border-color: #579E4D !important;
 } */
 .form-check-input:checked {
-    background-color: #F2A422!important;
-    border-color: #F2A422!important;
+    background-color: #105492!important;
+    border-color: #105492!important;
 }
 
 .form-control {
@@ -4215,12 +4219,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }
@@ -4346,12 +4350,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }
@@ -4439,12 +4443,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }
@@ -4549,12 +4553,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }
@@ -4574,12 +4578,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }
@@ -4659,12 +4663,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }
@@ -4799,12 +4803,12 @@ input[type="number"], input[type="date"] {
     }
 
     .navbar-brand span {
-        color: #FFC107;
-        font-size: 10px;
+        color: #fff;
+        font-size: 35px;
         display: block;
-        line-height: 20px;
+        line-height: 42px;
         letter-spacing: 2px;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: capitalize;
         text-align: center;
     }

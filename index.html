@@ -211,12 +211,12 @@
             <div class="container-fluid">
               <nav
                 class="navbar navbar-expand-lg navbar-light bg-light p-2"
-                style="background-color: #069e54 !important"
+                style="background-color: #105492!important"
               >
                 <div class="container-fluid">
                   <a class="navbar-brand mt-1" href="index.html">
-                    <img src="./assets/images/logo-ZM.png"
-                  /></a>
+                    <span>MALI</span>
+                </a>
                 </div>
               </nav>
             </div>
@@ -228,12 +228,10 @@
             <div class="banner-text">
               <div class="book-form ps-0 pe-0">
                 <form class="row">
-                  <div
-                    class="col-sm-12 col-md-3 col-lg-4 form-date-w3-agileits"
-                  >
+                  <div class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits">
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      Province &nbsp;<i
+                      Region &nbsp;<i
                         id="filter-wait-county"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
@@ -245,16 +243,13 @@
                       name="filter-county"
                       class="form-select border-radius-0"
                     >
-                      <option>Select your Province</option>
+                      <option>Select your Region </option>
                     </select>
                   </div>
-                  <div
-                    id="non-dmmu-districts"
-                    class="col-sm-12 col-md-4 col-lg-4 form-date-w3-agileits"
-                  >
+                  <div  id="non-dmmu-districts" class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits">
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      District &nbsp;<i
+                      Cercle &nbsp;<i
                         id="filter-wait-subcounty"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
@@ -266,31 +261,34 @@
                       name="filter-subcounty"
                       class="form-select border-radius-0"
                     >
-                      <option>Select your District</option>
+                      <option>Select your Cercle </option>
                     </select>
                   </div>
 
                   <div
-                    id="dmmu-districts"
-                    class="col-sm-12 col-md-4 col-lg-4 form-date-w3-agileits"
+                    id="commune"
+                    class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits"
                   >
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      District &nbsp;<i
+                      Commune  &nbsp;<i
                         id="filter-wait-subcounty"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
                         style="display: none"
                       ></i>
                     </label>
-                    <select
-                      id="filter-dmmu-subcounty"
-                      name="filter-dmmu-subcounty"
-                      class="form-select border-radius-0"
-                    ></select>
+                    <select name="filter-dmmu1-subcounty"  class="form-select border-radius-0">
+                      <option value="1">Commune I</option>
+                      <option value="2">Commune II</option>
+                      <option value="3">Commune III</option>
+                      <option value="4">Commune IV</option>
+                      <option value="5">Commune V</option>
+                      <option value="6">Commune VI</option>
+                    </select>
                   </div>
 
-                  <div class="col-md-4 form-left-agileits-w3layouts">
+                  <div class="col-sm-12 col-md-3 col-lg-3 form-left-agileits-w3layouts">
                     <button
                       type="button"
                       class="btn btn-sm btn-advisory h-48px"
