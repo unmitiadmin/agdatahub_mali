@@ -944,7 +944,7 @@ ul .nav-active {
     font-weight: 600 !important;
     border-radius: 4px!important;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    background: #ffe27e !important;
+    background: #10549282 !important;
 }
 .highcharts-label.highcharts-series-label {
 display: none;
@@ -1263,7 +1263,7 @@ display: none;
     font-weight: 400;
 }
 .btn-advisory.mt-same {
-    background: #f2a422 !important;
+    background: #105492 !important;
     color: #FFFFFF !important;
     padding: 0.65em 2em !important;
     border: none !important;
@@ -1277,7 +1277,7 @@ display: none;
 
 .btn-advisory.mt-same-1 {
     height: 42px;
-    background: rgb(0, 150, 136) !important;
+    background: #105492 !important;
     color: rgb(255, 255, 255) !important;
     padding: 0.65em 2em !important;
     border: none !important;
@@ -1437,7 +1437,7 @@ display: none;
 
 .nav.nav-pills.btn-group {
     border-radius: 4px !important;
-    background: #FDF2D9;
+    background: #dff0ff;
 }
 
 .btn-outline-primary {
