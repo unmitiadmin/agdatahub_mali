@@ -1,0 +1,26 @@
+id,workspace,layer,layer_label,level,status
+1,ZamSoilMapFAO,ferricacrisols,Ferric Acrisols,2,1
+2,ZamSoilMapFAO,chromiccambisols,Chromic Cambisols,2,1
+3,ZamSoilMapFAO,ferralsolsmerged,FerralsolsMerged,1,1
+4,ZamSoilMapFAO,humicferralsols,Humic Ferralsols,2,1
+5,ZamSoilMapFAO,orthicferralsols,Orthic Ferralsols,2,1
+6,ZamSoilMapFAO,plinthicferralsols,Plinthic Ferralsols,2,1
+7,ZamSoilMapFAO,rhodicferralsols,Rhodic Ferralsols,2,1
+8,ZamSoilMapFAO,xanthicferralsols,Xanthic Ferralsols,2,1
+9,ZamSoilMapFAO,eutricgleysols,Eutric Gleysols,2,1
+10,ZamSoilMapFAO,lithosols,Lithosols,2,1
+11,ZamSoilMapFAO,eutricfluvisols,Eutric Fluvisols,2,1
+12,ZamSoilMapFAO,luvisolsmerged,LuvisolsMerged,1,1
+13,ZamSoilMapFAO,chromicluvisols,Chromic Luvisols,2,1
+14,ZamSoilMapFAO,ferricluvisols,Ferric Luvisols,2,1
+15,ZamSoilMapFAO,nitosolsmerged,NitosolsMerged,1,1
+16,ZamSoilMapFAO,eutricnitosols,Eutric Nitosols,2,1
+17,ZamSoilMapFAO,humicnitosols,Humic Nitosols,2,1
+18,ZamSoilMapFAO,eutrichistosols,Eutric Histosols,2,1
+19,ZamSoilMapFAO,humicpodzols,Humic Podzols,2,1
+20,ZamSoilMapFAO,arenosolsmerged,ArenosolsMerged,1,1
+21,ZamSoilMapFAO,cambicarenosols,Cambic Arenosols,2,1
+22,ZamSoilMapFAO,ferralicarenosols,Ferralic Arenosols,2,1
+23,ZamSoilMapFAO,dystricregosols,Dystric Regosols,2,1
+24,ZamSoilMapFAO,pellicvertisols,Pellic Vertisols,2,1
+25,ZamSoilMapFAO,waterbody,Water Bodies,2,1
