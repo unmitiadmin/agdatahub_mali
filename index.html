@@ -360,7 +360,7 @@
                   Agriculture
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <!-- <li class="nav-item" role="presentation">
                 <button
                   class="nav-link"
                   id="dmmu-tab"
@@ -373,7 +373,7 @@
                 >
                   DMMU
                 </button>
-              </li>
+              </li> -->
 
               <li class="nav-item" role="presentation">
                 <button
@@ -408,7 +408,7 @@
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link"
-                  id="soils-tab"
+                  id="news-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#soils"
                   type="button"
@@ -416,7 +416,7 @@
                   aria-controls="soils"
                   aria-selected="false"
                 >
-                  Soils
+                  News
                 </button>
               </li>
             </ul>
@@ -4396,7 +4396,7 @@
                 </div>
               </div>
 
-              <div
+              <!-- <div
                 class="tab-pane fade"
                 id="dmmu"
                 role="tabpanel"
@@ -4506,7 +4506,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div
                 class="tab-pane fade"
@@ -4963,103 +4963,11 @@
                 class="tab-pane fade"
                 id="soils"
                 role="tabpanel"
-                aria-labelledby="soils-tab"
+                aria-labelledby="news-tab"
               >
-                <div class="row mt-3">
-                  <div class="col-sm-12 col-md-6 col-lg-6">
-                    <div class="card shadow border-0">
-                      <div class="card-body">
-                        <div
-                          class=""
-                          id="soils-map"
-                          style="width: 100%; height: 550px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-md-12 col-lg-12" style="width: 50%">
-                    <div class="card" style="min-height: 585px">
-                      <div class="mt-2 px-2">
-                        <div class="row mt-3">
-                          <div class="col-sm-12 col-md-12 col-lg-12">
-                            <nav class="navecation">
-                              <ul class="d-flex">
-                                <li>
-                                  <a
-                                    class="menu active"
-                                    style="margin-right: 30px"
-                                  >
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input hide-radio"
-                                        type="radio"
-                                        name="soil-choice-type"
-                                        id="level1"
-                                        value="1"
-                                        data-tab-id="soils-level1-options"
-                                      />
-                                      <label
-                                        class="form-check-label font-weight-600 cursor"
-                                        for="level1"
-                                        >Level 1</label
-                                      >
-                                    </div>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="menu">
-                                    <div class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input hide-radio"
-                                        type="radio"
-                                        name="soil-choice-type"
-                                        id="level2"
-                                        value="2"
-                                        data-tab-id="soils-level2-options"
-                                      />
-                                      <label
-                                        class="form-check-label font-weight-600 cursor"
-                                        for="level2"
-                                        >Level 2</label
-                                      >
-                                    </div>
-                                  </a>
-                                </li>
-                              </ul>
-                            </nav>
-                          </div>
-                        </div>
-
-                        <div class="px-2 mt-3">
-                          <div
-                            class="soils-options-tab"
-                            id="soils-level1-options"
-                            style="display: none"
-                          ></div>
-                          <div
-                            class="soils-options-tab"
-                            id="soils-level2-options"
-                            style="
-                              display: none;
-                              height: 60vh;
-                              overflow-y: scroll;
-                            "
-                          >
-                            <div class="form-group me-2">
-                              <label class="form-check-label-level"
-                                >Choose one of level 1 units</label
-                              >
-                              <select
-                                class="form-select first-filter mt-1 h-48px mt-1"
-                                id="soil-class-options"
-                              ></select>
-                            </div>
-                            <div class="mt-2" id="soil-type-options"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="row mt-3 py-5">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h5>Updating soon!</h5>
                   </div>
                 </div>
               </div>
@@ -5122,7 +5030,7 @@
       });
 
       $(
-        "#weather-tab, #agriculture-tab, #spatial-tab, #satelliteimagery-tab, #soils-tab"
+        "#weather-tab, #agriculture-tab, #spatial-tab, #satelliteimagery-tab, #news-tab"
       ).each(function () {
         $(this).click(function () {
           $("#dmmu-districts").hide();
