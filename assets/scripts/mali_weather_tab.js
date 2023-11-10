@@ -5,12 +5,12 @@ $(document).ready(function () {
     
     $.ajax({
       type: "GET",
-      url: `${weatherApiUrl}/provinces`,
+      url: `${weatherApiUrl}/regions`,
       success: function (response) {
         if (Array.isArray(response.data)) {
-          let provinces = response.data;
-          provinces.forEach(function (item) {
-            const option = `<option value="${item.province}">${item.province}</option>`;
+          let regions = response.data;
+          regions.forEach(function (item) {
+            const option = `<option value="${item.region_id}">${item.region}</option>`;
             provinceSelect.append(option);
           });
         } else {
@@ -23,20 +23,20 @@ $(document).ready(function () {
     });
     
     $("#province-select").change(function () {
-      const selectedProvince = $(this).val();
-      if (selectedProvince !== "Select your Province") {
+      const selectedRegion = $(this).val();
+      if (selectedRegion !== "Select your Province") {
         $.ajax({
           type: "GET",
-          url: `${weatherApiUrl}/districts`,
-          data: { province: toTitleCase(selectedProvince) },
+          url: `${weatherApiUrl}/cercles`,
+          data: { regionId: toTitleCase(selectedRegion) },
           success: function (response) {
             if (Array.isArray(response.data)) {
               districtSelect.empty();
               let districts = response.data;
-              const option = `<option value="" selected>Select your District</option>`;
+              const option = `<option value="" selected>Select your Cercle</option>`;
               districtSelect.append(option);
               districts.forEach(function (item) {
-                const option = `<option value="${item.id}">${item.district}</option>`;
+                const option = `<option value="${item.cercle_id}">${item.cercle}</option>`;
                 districtSelect.append(option);
               });
             } else {

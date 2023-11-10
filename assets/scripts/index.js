@@ -1,5 +1,5 @@
 
-const weatherApiUrl = "http://15.206.6.122:8084";
+const weatherApiUrl = "http://15.206.6.122:8085";
 
 $(window).on("load", () => new Index().init());
 

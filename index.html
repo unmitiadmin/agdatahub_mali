@@ -166,7 +166,7 @@
     <script src="./assets/scripts/forecast_weather.js"></script>
     <script src="./assets/scripts/current_weather.js"></script>
     <script src="./assets/scripts/historic_weather.js"></script>
-    <script src="./assets/scripts/ziamis_weather_tab.js"></script>
+    <script src="./assets/scripts/mali_weather_tab.js"></script>
     <script src="./assets/scripts/spatial_analysis.js"></script>
     <script src="./assets/scripts/open_africa.js"></script>
 
@@ -231,7 +231,6 @@
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                       Region &nbsp;<i
-                        id="filter-wait-county"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
                         style="display: none"
@@ -246,13 +245,11 @@
                     </select>
                   </div>
                   <div
-                    id="non-dmmu-districts"
                     class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits"
                   >
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                       Cercle &nbsp;<i
-                        id="filter-wait-subcounty"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
                         style="display: none"
@@ -274,16 +271,16 @@
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                       Commune &nbsp;<i
-                        id="filter-wait-subcounty"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
                         style="display: none"
                       ></i>
                     </label>
                     <select
-                      name="filter-dmmu1-subcounty"
+                      name="filter-commune"
                       class="form-select border-radius-0"
                     >
+                      <option value="0">---------</option>
                       <option value="1">Commune I</option>
                       <option value="2">Commune II</option>
                       <option value="3">Commune III</option>
@@ -300,14 +297,6 @@
                       type="button"
                       class="btn btn-sm btn-advisory h-48px"
                       id="submit-ward"
-                      style="height: 42px"
-                    >
-                      Submit
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-advisory h-48px"
-                      id="submit-dmmu-ward"
                       style="height: 42px"
                     >
                       Submit
@@ -367,20 +356,6 @@
                   Agriculture
                 </button>
               </li>
-              <!-- <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link"
-                  id="dmmu-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#dmmu"
-                  type="button"
-                  role="tab"
-                  aria-controls="dmmu"
-                  aria-selected="false"
-                >
-                  DMMU
-                </button>
-              </li> -->
 
               <li class="nav-item" role="presentation">
                 <button
@@ -4402,118 +4377,6 @@
                 </div>
               </div>
 
-              <!-- <div
-                class="tab-pane fade"
-                id="dmmu"
-                role="tabpanel"
-                aria-labelledby="dmmu-tab"
-              >
-                <div class="row my-3">
-                  <div class="col-sm-12 col-md-5 col-lg-5">
-                    <div class="card">
-                      <div class="card-body">
-                        <div id="dmmu-map" style="height: 85vh; width: 100%">
-                          <div id="dmmu-map-legend"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-md-7 col-lg-7">
-                    <div class="card">
-                      <div class="card-header">
-                        <div
-                          class="d-flex justify-content-between align-items-center"
-                        >
-                          <div>
-                            <h3 class="title-text mb-0">
-                              Aggregated Statistics
-                            </h3>
-                          </div>
-                          <div class="col-sm-12 col-md-6 col-lg-5">
-                            <label>Dates</label>
-                            <div
-                              style="
-                                background: #fff;
-                                font-size: 14px;
-                                margin-top: 5px;
-                                cursor: pointer;
-                                padding: 5px 10px;
-                                border: 1px solid #ccc;
-                                width: 100%;
-                              "
-                              id="reportrange"
-                            >
-                              <i class="fa fa-calendar"></i>&nbsp;
-                              <i class="fa fa-caret-down"></i>
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="card-body"
-                        style="height: 575px; overflow-y: scroll"
-                      >
-                        <div class="row mb-5">
-                          <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="card border-1 mb-3">
-                              <div class="card-header bg-color">
-                                <div
-                                  class="d-flex justify-content-between align-items-center"
-                                >
-                                  <div>
-                                    <h4 class="chart-title mb-0">
-                                      Type - Hazard, Disaster, Incident
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <div
-                                      id="chart-hazard-disaster-incident"
-                                      style="width: 100%; height: 500px"
-                                    ></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="card border-1 mb-3">
-                              <div class="card-header bg-color">
-                                <div
-                                  class="d-flex justify-content-between align-items-center"
-                                >
-                                  <div>
-                                    <h4 class="chart-title mb-0">
-                                      OCCURANCE - HAZARD, DISASTER, INCIDENT
-                                    </h4>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <div
-                                      id="chart-hazard-disaster-incident-1"
-                                      style="width: 100%; height: 350px"
-                                    ></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
               <div
                 class="tab-pane fade"
                 id="satelliteimagery"
@@ -5024,28 +4887,15 @@
       showContent();
       $("#non-notice").hide();
       $("#loading-icon").hide();
-      $("#dmmu-districts").hide();
-      $("#submit-dmmu-ward").hide();
-    </script>
-    <script>
+
       $(document).ready(function () {
         $(".menu").click(function () {
           $(".menu").removeClass("active");
           $(this).addClass("active");
         });
       });
-
-      $(
-        "#weather-tab, #agriculture-tab, #spatial-tab, #satelliteimagery-tab, #news-tab"
-      ).each(function () {
-        $(this).click(function () {
-          $("#dmmu-districts").hide();
-          $("#non-dmmu-districts").show();
-          $("#submit-dmmu-ward").hide();
-          $("#submit-ward").show();
-        });
-      });
     </script>
+    <script></script>
     <!-- ---------------------------- -->
     <script></script>
   </body>
