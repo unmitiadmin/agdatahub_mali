@@ -168,10 +168,7 @@
     <script src="./assets/scripts/historic_weather.js"></script>
     <script src="./assets/scripts/ziamis_weather_tab.js"></script>
     <script src="./assets/scripts/spatial_analysis.js"></script>
-
-    <script src="./assets/scripts/ziamis_dmmu.js"></script>
     <script src="./assets/scripts/open_africa.js"></script>
-    <script src="./assets/scripts/ziamis_soils.js"></script>
 
     <style>
       .content {
@@ -211,12 +208,12 @@
             <div class="container-fluid">
               <nav
                 class="navbar navbar-expand-lg navbar-light bg-light p-2"
-                style="background-color: #105492!important"
+                style="background-color: #105492 !important"
               >
                 <div class="container-fluid">
                   <a class="navbar-brand mt-1" href="index.html">
                     <span>MALI</span>
-                </a>
+                  </a>
                 </div>
               </nav>
             </div>
@@ -228,7 +225,9 @@
             <div class="banner-text">
               <div class="book-form ps-0 pe-0">
                 <form class="row">
-                  <div class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits">
+                  <div
+                    class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits"
+                  >
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                       Region &nbsp;<i
@@ -243,10 +242,13 @@
                       name="filter-county"
                       class="form-select border-radius-0"
                     >
-                      <option>Select your Region </option>
+                      <option>Select your Region</option>
                     </select>
                   </div>
-                  <div  id="non-dmmu-districts" class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits">
+                  <div
+                    id="non-dmmu-districts"
+                    class="col-sm-12 col-md-3 col-lg-3 form-date-w3-agileits"
+                  >
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                       Cercle &nbsp;<i
@@ -261,7 +263,7 @@
                       name="filter-subcounty"
                       class="form-select border-radius-0"
                     >
-                      <option>Select your Cercle </option>
+                      <option>Select your Cercle</option>
                     </select>
                   </div>
 
@@ -271,14 +273,17 @@
                   >
                     <label>
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      Commune  &nbsp;<i
+                      Commune &nbsp;<i
                         id="filter-wait-subcounty"
                         class="fa fa-spinner fa-spin"
                         aria-hidden="true"
                         style="display: none"
                       ></i>
                     </label>
-                    <select name="filter-dmmu1-subcounty"  class="form-select border-radius-0">
+                    <select
+                      name="filter-dmmu1-subcounty"
+                      class="form-select border-radius-0"
+                    >
                       <option value="1">Commune I</option>
                       <option value="2">Commune II</option>
                       <option value="3">Commune III</option>
@@ -288,7 +293,9 @@
                     </select>
                   </div>
 
-                  <div class="col-sm-12 col-md-3 col-lg-3 form-left-agileits-w3layouts">
+                  <div
+                    class="col-sm-12 col-md-3 col-lg-3 form-left-agileits-w3layouts"
+                  >
                     <button
                       type="button"
                       class="btn btn-sm btn-advisory h-48px"
