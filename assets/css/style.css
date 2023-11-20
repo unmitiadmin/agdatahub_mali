@@ -271,6 +271,23 @@ a {
     object-fit: cover;
 }
 
+div#map-fao-sat-legend {
+    height: auto !important;
+    width: auto !important;
+    min-width: 150px;
+    position: absolute;
+    padding: 8px 8px 8px 10px;
+    font-size: 14px !important;
+    z-index: 1000;
+    color: #000 !important;
+    border-radius: 0px;
+    left: auto;
+    right: 0;
+    background-color: transparent;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
 .mt-80px {
     margin-top: 65px;
 }
@@ -852,7 +869,7 @@ ul .nav-active {
     color: #fff !important;
     font-weight: 500 !important;
     border-radius: 0px !important;
-    background-color: #33aba0 !important;
+    background-color: #105492 !important;
 }
 
 /* .nav-pills.nav-filter-pills .nav-link.active,
@@ -1184,7 +1201,7 @@ display: none;
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #000 !important;
-    background-color: #f2a422!important;
+    background-color: inherit;
     width: 100%;
     font-size: 14px !important;
     font-weight: 700 !important;

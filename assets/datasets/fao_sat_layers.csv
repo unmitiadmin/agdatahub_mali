@@ -1,0 +1,15 @@
+category,layer_label,timescale,path,static_workspace,workspace,layer
+Vegetation Indicators,Vegetation Condition Index,dekad,ASIS/VCI_D,VCI_D_2023-09,VCI_D_<year-dekad>,ASIS:asis_vci_d
+Vegetation Indicators,Vegetation Health Index,dekad,ASIS/VHI_D,VHI_D_2023-09,VHI_D_<year-dekad>,ASIS:asis_vhi_d
+Seasonal Indicators,Agricultural Stress Index (Cropland-Season1),dekad,ASIS/ASI_D,ASI_D_2023-09_S1_C,ASI_D_<year-dekad>_S1_C,ASIS:asis_asi_d_c
+Seasonal Indicators,Agricultural Stress Index (Cropland-Season2),dekad,ASIS/ASI_D,ASI_D_2023-09_S2_C,ASI_D_<year-dekad>_S2_C,ASIS:asis_asi_d_c
+Seasonal Indicators,Agricultural Stress Index (Grassland-Season1),dekad,ASIS/ASI_D,ASI_D_2023-09_S1_P,ASI_D_<year-dekad>_S1_P,ASIS:asis_asi_d_p
+Seasonal Indicators,Agricultural Stress Index (Grassland-Season2),dekad,ASIS/ASI_D,ASI_D_2023-09_S2_P,ASI_D_<year-dekad>_S2_P,ASIS:asis_asi_d_p
+Seasonal Indicators,Drought Intensity (Cropland-Season1),dekad,ASIS/DI_D,DI_D_2023-09_S1_C,DI_D_<year-dekad>_S1_C,ASIS:asis_di_d_c
+Seasonal Indicators,Drought Intensity (Cropland-Season2),dekad,ASIS/DI_D,DI_D_2023-09_S2_C,DI_D_<year-dekad>_S2_C,ASIS:asis_di_d_c
+Seasonal Indicators,Drought Intensity (Grassland-Season1),dekad,ASIS/DI_D,DI_D_2023-09_S1_P,DI_D_<year-dekad>_S1_P,ASIS:asis_di_d_p
+Seasonal Indicators,Drought Intensity (Grassland-Season2),dekad,ASIS/DI_D,DI_D_2023-09_S2_P,DI_D_<year-dekad>_S2_P,ASIS:asis_di_d_p
+Seasonal Indicators,Mean Vegetation Health Index (Cropland-Season1),dekad,ASIS/MVHI_D,MVHI_D_2023-09_S1_C,MVHI_D_<year-dekad>_S1_C,ASIS:asis_mvhi_d_c
+Seasonal Indicators,Mean Vegetation Health Index (Cropland-Season2),dekad,ASIS/MVHI_D,MVHI_D_2023-09_S2_C,MVHI_D_<year-dekad>_S2_C,ASIS:asis_mvhi_d_c
+Seasonal Indicators,Mean Vegetation Health Index (Grassland-Season1),dekad,ASIS/MVHI_D,MVHI_D_2023-09_S1_P,MVHI_D_<year-dekad>_S1_P,ASIS:asis_mvhi_d_p
+Seasonal Indicators,Mean Vegetation Health Index (Grassland-Season2),dekad,ASIS/MVHI_D,MVHI_D_2023-09_S2_P,MVHI_D_<year-dekad>_S2_P,ASIS:asis_mvhi_d_p
