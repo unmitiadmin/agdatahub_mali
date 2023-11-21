@@ -1,0 +1,590 @@
+[
+  {
+    "crop": "Bananas",
+    "year": "2010",
+    "area": "4110",
+    "production": "172182",
+    "yield": "418940"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2011",
+    "area": "3181",
+    "production": "137763",
+    "yield": "433081"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2012",
+    "area": "3828",
+    "production": "149539.09",
+    "yield": "390623"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2013",
+    "area": "3582",
+    "production": "165472",
+    "yield": "461954"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2014",
+    "area": "4500",
+    "production": "136362",
+    "yield": "303027"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2015",
+    "area": "4816",
+    "production": "153370",
+    "yield": "318484"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2016",
+    "area": "5761",
+    "production": "174524.99",
+    "yield": "302929"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2017",
+    "area": "7752",
+    "production": "191228",
+    "yield": "246682"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2018",
+    "area": "8270",
+    "production": "196421",
+    "yield": "237510"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2019",
+    "area": "8270",
+    "production": "196421",
+    "yield": "237510"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2020",
+    "area": "8412",
+    "production": "200487",
+    "yield": "238335"
+  },
+  {
+    "crop": "Bananas",
+    "year": "2021",
+    "area": "37835",
+    "production": "500983",
+    "yield": "132413"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2010",
+    "area": "504362",
+    "production": "1356043",
+    "yield": "26886"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2011",
+    "area": "924850",
+    "production": "1298234",
+    "yield": "14037"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2012",
+    "area": "580881",
+    "production": "1418907",
+    "yield": "24427"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2013",
+    "area": "630832",
+    "production": "1635564",
+    "yield": "25927"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2014",
+    "area": "803136",
+    "production": "1744026",
+    "yield": "21715"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2015",
+    "area": "899640",
+    "production": "2276036",
+    "yield": "25299"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2016",
+    "area": "1031522",
+    "production": "2811385",
+    "yield": "27255"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2017",
+    "area": "1233008",
+    "production": "3598205",
+    "yield": "29182"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2018",
+    "area": "1258559",
+    "production": "3624949.97",
+    "yield": "28802"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2019",
+    "area": "1432151",
+    "production": "3816536",
+    "yield": "26649"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2020",
+    "area": "1170148",
+    "production": "3516865",
+    "yield": "30055"
+  },
+  {
+    "crop": "Maize (corn)",
+    "year": "2021",
+    "area": "1536189",
+    "production": "3603000",
+    "yield": "23454"
+  },
+  {
+    "crop": "Millet",
+    "year": "2010",
+    "area": "1257043",
+    "production": "1373342",
+    "yield": "10925"
+  },
+  {
+    "crop": "Millet",
+    "year": "2011",
+    "area": "2283665",
+    "production": "1462139",
+    "yield": "6403"
+  },
+  {
+    "crop": "Millet",
+    "year": "2012",
+    "area": "1873644",
+    "production": "1680308",
+    "yield": "8968"
+  },
+  {
+    "crop": "Millet",
+    "year": "2013",
+    "area": "1967200",
+    "production": "1854175",
+    "yield": "9425"
+  },
+  {
+    "crop": "Millet",
+    "year": "2014",
+    "area": "1743423",
+    "production": "1715044",
+    "yield": "9837"
+  },
+  {
+    "crop": "Millet",
+    "year": "2015",
+    "area": "1943002",
+    "production": "1864301",
+    "yield": "9595"
+  },
+  {
+    "crop": "Millet",
+    "year": "2016",
+    "area": "2040152",
+    "production": "1806559",
+    "yield": "8855"
+  },
+  {
+    "crop": "Millet",
+    "year": "2017",
+    "area": "2155729",
+    "production": "1492650",
+    "yield": "6924"
+  },
+  {
+    "crop": "Millet",
+    "year": "2018",
+    "area": "2158263",
+    "production": "1840320.81",
+    "yield": "8527"
+  },
+  {
+    "crop": "Millet",
+    "year": "2019",
+    "area": "1989953",
+    "production": "1878527",
+    "yield": "9440"
+  },
+  {
+    "crop": "Millet",
+    "year": "2020",
+    "area": "2164374",
+    "production": "1921171",
+    "yield": "8876"
+  },
+  {
+    "crop": "Millet",
+    "year": "2021",
+    "area": "2079082",
+    "production": "1487683",
+    "yield": "7155"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2010",
+    "area": "3726",
+    "production": "82470",
+    "yield": "221344"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2011",
+    "area": "6083",
+    "production": "124532",
+    "yield": "204721"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2012",
+    "area": "6980",
+    "production": "138778.69",
+    "yield": "198838"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2013",
+    "area": "7745",
+    "production": "149596.88",
+    "yield": "193146"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2014",
+    "area": "8543",
+    "production": "157439",
+    "yield": "184290"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2015",
+    "area": "9666",
+    "production": "183410",
+    "yield": "189750"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2016",
+    "area": "10525",
+    "production": "210209",
+    "yield": "199724"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2017",
+    "area": "11750",
+    "production": "251558",
+    "yield": "214092"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2018",
+    "area": "13689",
+    "production": "310902",
+    "yield": "227118"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2019",
+    "area": "13459",
+    "production": "303257",
+    "yield": "225319"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2020",
+    "area": "9588",
+    "production": "225879.67",
+    "yield": "235591"
+  },
+  {
+    "crop": "Potatoes",
+    "year": "2021",
+    "area": "9615",
+    "production": "218062",
+    "yield": "226794"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2010",
+    "area": "615936",
+    "production": "1296154",
+    "yield": "21044"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2011",
+    "area": "576460",
+    "production": "1741472",
+    "yield": "30210"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2012",
+    "area": "602100",
+    "production": "2076423",
+    "yield": "34486"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2013",
+    "area": "659022",
+    "production": "1977669",
+    "yield": "30009"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2014",
+    "area": "684184",
+    "production": "2166830",
+    "yield": "31670"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2015",
+    "area": "762140",
+    "production": "2331053",
+    "yield": "30586"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2016",
+    "area": "834643",
+    "production": "2780905",
+    "yield": "33318"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2017",
+    "area": "767874",
+    "production": "2707557",
+    "yield": "35260"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2018",
+    "area": "969519",
+    "production": "3167527.62",
+    "yield": "32671"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2019",
+    "area": "924644",
+    "production": "3196336",
+    "yield": "34568"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2020",
+    "area": "898060",
+    "production": "3010027",
+    "yield": "33517"
+  },
+  {
+    "crop": "Rice, Paddy",
+    "year": "2021",
+    "area": "874031",
+    "production": "2420245",
+    "yield": "27691"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2010",
+    "area": "4946",
+    "production": "359000",
+    "yield": "725909"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2011",
+    "area": "4900",
+    "production": "358000",
+    "yield": "730612"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2012",
+    "area": "5300",
+    "production": "387000",
+    "yield": "730189"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2013",
+    "area": "4563",
+    "production": "335690",
+    "yield": "735678"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2014",
+    "area": "4884",
+    "production": "355624.92",
+    "yield": "728143"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2015",
+    "area": "4922",
+    "production": "357640.04",
+    "yield": "726672"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2016",
+    "area": "6606",
+    "production": "478287.3",
+    "yield": "724011"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2017",
+    "area": "7300",
+    "production": "531235.87",
+    "yield": "727754"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2018",
+    "area": "8028",
+    "production": "583989.33",
+    "yield": "727462"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2019",
+    "area": "8970",
+    "production": "650000",
+    "yield": "724627"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2020",
+    "area": "8965",
+    "production": "650000",
+    "yield": "725057"
+  },
+  {
+    "crop": "Sugar cane",
+    "year": "2021",
+    "area": "8900",
+    "production": "645692.48",
+    "yield": "725487"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2010",
+    "area": "10887",
+    "production": "204728",
+    "yield": "188048"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2011",
+    "area": "14546",
+    "production": "264968.71",
+    "yield": "182160"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2012",
+    "area": "19497",
+    "production": "344823.67",
+    "yield": "176857"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2013",
+    "area": "23350",
+    "production": "407334.36",
+    "yield": "174447"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2014",
+    "area": "23648",
+    "production": "382174",
+    "yield": "161609"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2015",
+    "area": "21057",
+    "production": "303839",
+    "yield": "144294"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2016",
+    "area": "32158",
+    "production": "545254",
+    "yield": "169555"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2017",
+    "area": "59172",
+    "production": "1020678",
+    "yield": "172493"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2018",
+    "area": "32191",
+    "production": "504557",
+    "yield": "156739"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2019",
+    "area": "19807",
+    "production": "312477",
+    "yield": "157761"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2020",
+    "area": "39104",
+    "production": "573183.9",
+    "yield": "146580"
+  },
+  {
+    "crop": "Sweet potatoes",
+    "year": "2021",
+    "area": "33563",
+    "production": "519788",
+    "yield": "154869"
+  }
+]
