@@ -53,8 +53,8 @@ class ForecastCollectiveMedium{
     renderWeatherCards = (data, dataSrcId) => {
         let cardsHtml = ["5", "6", "7"].includes(dataSrcId)
             ? data.map(a => {
-                return `<div class="card card-shadow ms-1 me-1 mt-1 mb-1 p-3" style="background-color: #dffffc33">
-                    <p class="mb-3 mt-3"><b>Date: ${a.date}</b></p>
+                return `<div class="card card-shadow ms-1 me-1 mt-1 mb-1 p-2" style="background-color: #dffffc33">
+                    <p class="mb-2 mt-2"><b>Date: ${a.date}</b></p>
                     <p><b>Rainfall:</b> ${!isNaN(a.rainfall) ? (this.int(a.rainfall) ? this.int(a.rainfall) : 0) + " mm": "N/A"}</p>
                 </div>`;
             }):
@@ -82,7 +82,7 @@ class ForecastCollectiveMedium{
             "5": {
                 categories: data.map(a => a.date),
                 yAxis: [{labels: {format: '{value}'}, title: {text: 'Rainfall (mm)'},  allowDecimals: false},],
-                series: [{name: 'Rainfall', type: 'column', tooltip: {valueSuffix: ' mm'}, data: data.map(e => !isNaN(e.rainfall) ? this.int(e.rainfall) : null), color: '#69ccc3'},                ]
+                series: [{name: 'Rainfall', type: 'column', tooltip: {valueSuffix: ' mm'}, data: data.map(e => !isNaN(e.rainfall) ? this.int(e.rainfall) : null), color: '#105492'},                ]
             },
         };
         chartData["6"] = chartData["5"];
@@ -103,7 +103,7 @@ class ForecastCollectiveMedium{
             });
             $(`a#dwn-fcollmedium-weather-sc1`).unbind("click").on("click", () => chart.exportChartLocal({filename: `forecast-weather1-${this.commune}`}));
             //table
-            let tableHead = `<tr style="background-color: #69ccc3;">` + Object.keys(data[0]).map(e => 
+            let tableHead = `<tr style="background-color: #105492;">` + Object.keys(data[0]).map(e => 
                 `<th class="text-white">${
                     e == "rainfall" ? `${e} (mm)`
                     : e == "rainfall_chance" ? `${e} (%)`

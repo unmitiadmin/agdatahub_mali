@@ -80,7 +80,7 @@ class ForecastCollectiveShort{
             : dataSrcId == "4"
             ? data.map(a => {
                 return `<div class="card card-shadow ms-1 me-1 mt-1 mb-1 p-3" style="background-color: #dffffc33">
-                    <p class="mb-3 mt-3"><b>Date: ${a.date}</b></p>
+                    <p class="mb-2 mt-2"><b>Date: ${a.date}</b></p>
                     <p><b>Rainfall:</b> ${!isNaN(a.rainfall) ? (this.int(a.rainfall) ? this.int(a.rainfall) : 0) + " mm": "N/A"}</p>
                     <p><b>Max Temp:</b> ${!isNaN(a.temp_max) ? this.float1(a.temp_max) + " °C": "N/A"}</p>
                     <p><b>Min Temp:</b> ${!isNaN(a.temp_min) ? this.float1(a.temp_min) + " °C": "N/A"}</p>
