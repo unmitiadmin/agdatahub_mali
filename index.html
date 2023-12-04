@@ -359,7 +359,7 @@
                   aria-controls="weather"
                   aria-selected="true"
                 >
-                Spatial analysis
+                  Spatial Analysis
                 </button>
               </li>
             </ul>
@@ -410,13 +410,13 @@
                                 >
                                   Medium Range
                                 </a>
-                                <a
+                                <!-- <a
                                   class="nav-link weather-menu item"
                                   data-bs-toggle="pill"
                                   href="#temperature"
                                 >
-                                  Temperatures
-                                </a>
+                                  Temperature
+                                </a> -->
                               </div>
                             </li>
                             <li role="button">
@@ -532,7 +532,10 @@
                               data-label="GFS"
                               checked
                             />
-                            <label class="form-check-label d-flex mb-0" for="GFS">
+                            <label
+                              class="form-check-label d-flex mb-0"
+                              for="GFS"
+                            >
                               GFS
                               <span>
                                 <div class="dropdown ps-1 pt-1">
@@ -964,24 +967,37 @@
                         <div class="row">
                           <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="bg-light p-2">
-                              <div class="d-flex justify-content-start align-items-center flex-wrap">
+                              <div
+                                class="d-flex justify-content-start align-items-center flex-wrap"
+                              >
                                 <div class="form-check pe-5">
-                                  <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault11" value="6" checked="">
-                                  <label class="form-check-label" for="flexRadioDefault11">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="flexRadioDefault11"
+                                    id="flexRadioDefault11"
+                                    value="6"
+                                    checked=""
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexRadioDefault11"
+                                  >
                                     TomorrowNow
                                     <div class="dropdown">
                                       <span class="dropbtn">
-                                        <img src="./assets/images/exclamation.svg"></span>
+                                        <img
+                                          src="./assets/images/exclamation.svg"
+                                      /></span>
                                       <div class="dropdown-content">
                                         <p class="mb-0">
                                           <span>
-                                            TomorrowNow is a global
-                                            non-profit leveraging
-                                            transformative philanthropy
-                                            to connect next generation
-                                            weather and climate
-                                            technologies with
-                                            communities in need.
+                                            TomorrowNow is a global non-profit
+                                            leveraging transformative
+                                            philanthropy to connect next
+                                            generation weather and climate
+                                            technologies with communities in
+                                            need.
                                           </span>
                                         </p>
                                       </div>
@@ -994,8 +1010,14 @@
                           <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="card mt-2">
                               <div class="card-body">
-                                <div class="" id="temperature-forecast" style="width: 100%; height: 350px">
-                                  <div class="text-center">Data is unavailable for this source</div>
+                                <div
+                                  class=""
+                                  id="temperature-forecast"
+                                  style="width: 100%; height: 350px"
+                                >
+                                  <div class="text-center">
+                                    Data is unavailable for this source
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1417,58 +1439,58 @@
                             <div class="row mt-3">
                               <div class="col-sm-12 col-md-12 col-lg-12">
                                 <ul
-                                class="nav nav-pills nav-fill mb-3 btn-group"
-                                role="tablist"
-                              >
-                                <li class="nav-item" role="presentation">
-                                  <button
-                                    class="nav-link btn btn-outline-primary btn-sm active"
-                                    type="button"
-                                    role="tab"
-                                    aria-selected="true"
-                                    data-bs-toggle="pill"
-                                    data-bs-target="#hrf-hm"
-                                  >
-                                    How Much
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                  <button
-                                    class="nav-link btn btn-outline-primary btn-sm"
-                                    type="button"
-                                    role="tab"
-                                    aria-selected="true"
-                                    data-bs-toggle="pill"
-                                    data-bs-target="#hrf-hd"
-                                  >
-                                    How Dry
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                  <button
-                                    class="nav-link btn btn-outline-primary btn-sm"
-                                    type="button"
-                                    role="tab"
-                                    aria-selected="true"
-                                    data-bs-toggle="pill"
-                                    data-bs-target="#hrf-hw"
-                                  >
-                                    How Wet
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                  <button
-                                    class="nav-link btn btn-outline-primary btn-sm"
-                                    type="button"
-                                    role="tab"
-                                    aria-selected="true"
-                                    data-bs-toggle="pill"
-                                    data-bs-target="#hrf-cs"
-                                  >
-                                    Crop Stress
-                                  </button>
-                                </li>
-                              </ul>
+                                  class="nav nav-pills nav-fill mb-3 btn-group"
+                                  role="tablist"
+                                >
+                                  <li class="nav-item" role="presentation">
+                                    <button
+                                      class="nav-link btn btn-outline-primary btn-sm active"
+                                      type="button"
+                                      role="tab"
+                                      aria-selected="true"
+                                      data-bs-toggle="pill"
+                                      data-bs-target="#hrf-hm"
+                                    >
+                                      How Much
+                                    </button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                    <button
+                                      class="nav-link btn btn-outline-primary btn-sm"
+                                      type="button"
+                                      role="tab"
+                                      aria-selected="true"
+                                      data-bs-toggle="pill"
+                                      data-bs-target="#hrf-hd"
+                                    >
+                                      How Dry
+                                    </button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                    <button
+                                      class="nav-link btn btn-outline-primary btn-sm"
+                                      type="button"
+                                      role="tab"
+                                      aria-selected="true"
+                                      data-bs-toggle="pill"
+                                      data-bs-target="#hrf-hw"
+                                    >
+                                      How Wet
+                                    </button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                    <button
+                                      class="nav-link btn btn-outline-primary btn-sm"
+                                      type="button"
+                                      role="tab"
+                                      aria-selected="true"
+                                      data-bs-toggle="pill"
+                                      data-bs-target="#hrf-cs"
+                                    >
+                                      Crop Stress
+                                    </button>
+                                  </li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -2723,7 +2745,7 @@
                 role="tabpanel"
                 aria-labelledby="spatialanalysis-tab"
               >
-                <div class="text-center my-5">spatialanalysis </div>
+                <div class="text-center my-5">Coming soon ...</div>
               </div>
             </div>
           </div>
