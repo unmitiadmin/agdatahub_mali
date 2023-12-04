@@ -29,9 +29,6 @@ $(document).ready(function () {
         });
         selectElement.append(option);
       });
-
-      console.log(selectElement.val())
-
       selectElement.selectpicker("refresh");
     }
 
