@@ -264,7 +264,25 @@ class WeatherIndex{
             if(this.communeId){
                 new ForecastCollectiveMedium(this.communeId, locationDetails, commonLookupDetails).execute();
             } else alert("Please choose a commune to view weather data");
+        });
 
+        // Seasonal forecast
+        $("a.nav-link.weather-menu[href='#fcollseasonal']").unbind("click").on("click", () => {
+            this.selectedRegion = $("select#filter-region option:selected").text();
+            this.selectedCercle = $("select#filter-cercle option:selected").text();
+            this.selectedCommune = $("select#filter-commune option:selected").text();
+            let locationDetails = {
+                "region": this.selectedRegion,
+                "cercle": this.selectedCercle,
+                "commune": this.selectedCommune,
+                "regionId": parseInt(this.regionId),
+                "cercleId": parseInt(this.cercleId),
+                "communeId": parseInt(this.communeId),
+            };
+            let commonLookupDetails = {"months": this.months, "weeks": this.weeks, "crops": this.crops};
+            if(this.communeId){
+                new ForecastCollectiveSeasonal(this.communeId, locationDetails, commonLookupDetails).execute();
+            } else alert("Please choose a commune to view weather data");
         });
 
         // Current Rainfall

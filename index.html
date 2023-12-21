@@ -410,6 +410,13 @@
                                 >
                                   Medium Range
                                 </a>
+                                <a
+                                  class="nav-link weather-menu item"
+                                  data-bs-toggle="pill"
+                                  href="#fcollseasonal"
+                                >
+                                  Seasonal
+                                </a>
                                 <!-- <a
                                   class="nav-link weather-menu item"
                                   data-bs-toggle="pill"
@@ -962,6 +969,62 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="tab-pane" id="fcollseasonal">
+                        <div class="d-flex bg-radio-filter align-items-center justify-content-start flex-wrap ms-2 me-2">
+                            <div class="form-check pe-5">
+                                <input type="radio" name="fcollseasonal-dtsrc" value="8" class="form-check-input"
+                                    data-label="IRI-Seasonal" checked>
+                                <label class="form-check-label d-flex" for="IRI-Seasonal">
+                                    &nbsp;IRI-NMME
+                                    <span>
+                                        <div class="dropdown ps-2">
+                                            <span class="dropbtn"><img
+                                                    src="./assets/images/exclamation.svg"></span>
+                                            <div class="dropdown-content">
+                                                <span><a href="https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/"  target="_blank">https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/</a></span>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mt-3 ps-2 pe-2">
+                            <div id="fcollseasonal-desc" class="mx-3"></div>
+                            <div id="card-fcollseasonal-graph">
+                                <div class="card border-0 mb-2">
+                                    <div class="card-body p-0">
+                                        <div id="fcollseasonal-summary" class="d-flex flex-wrap"></div>
+                                    </div>
+                                </div>
+                                <div class="card mb-2">
+                                    <div class="card-header">
+                                        <div class="d-flex justify-content-between align-items-center">                                            <div>
+                                                <span class="chart-title">Seasonal Weather Forecast</span>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a role="button" data-bs-toggle="dropdown" id="fcollseasonal-graph-data">
+                                                    <i class="fa fa-download"aria-hidden="true"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="fcollseasonal-graph-data">
+                                                    <li class="dropdown-item"><a role="button" id="dwn-fcollseasonal-graph-sc">Screenshot</a></li>
+                                                    <li class="dropdown-item"><a role="button" id="dwn-fcollseasonal-graph-dt">Data</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="col">
+                                            <div class="width: 100%; height: 55vh;" id="chart-fcollseasonal"></div>
+                                            <div class="table-responsive" style="display: none;">
+                                                <table class="table table-bordered" id="table-fcollseasonal-graph-data"></table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                       <div class="tab-pane" id="temperature">
                         <div class="row">
@@ -2788,6 +2851,7 @@
       type="text/javascript"
       src="./assets/scripts/weather_forecast_collective_medium.js"
     ></script>
+    <script type="text/javascript" src="./assets/scripts/weather_forecast_collective_seasonal.js"></script>
     <script
       type="text/javascript"
       src="./assets/scripts/weather_current_rainfall.js"
