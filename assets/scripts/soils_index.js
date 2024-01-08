@@ -19,6 +19,7 @@ class SoilsIndex{
         this.layerIndexFile = "fao_sat_layers.csv";
         this.layerIndex = [];
         this.optionTabL1 = $("div#soils-level1-options");
+        this.mapLegend = $("div#map-soils-legend");
     }
 
     init = () => {
@@ -91,54 +92,59 @@ class SoilsIndex{
     }
 
     enableSoilOptions = () => {
-        // All classes
+        // 1. All classes
         $("input.form-check-input[type='checkbox'][data-level='0']").unbind("change").on("change", e => {
             let checked = $(e.currentTarget).prop("checked");
             $("input.form-check-input[type='checkbox'][data-level='1']").prop("checked", checked).trigger("change");
         });
-        // Individual Classes
+        // 2. Individual Classes
         $("input.form-check-input[type='checkbox'][data-level='1']").unbind("change").on("change", e => {
             let workspace = $(e.currentTarget).data("workspace");
             let layer = $(e.currentTarget).data("layer");
             let checked = $(e.currentTarget).prop("checked");
-            if(checked){
+            let wmsLayer = $(e.currentTarget).data("wmsLayer");
+            // Remove the layer if it exists
+            if (wmsLayer) {
+                wmsLayer.off('layerremove'); // Remove the previous event handler
+                this.map.removeLayer(wmsLayer);
+            }
+            let checkedOptions = $("input.form-check-input[type='checkbox'][data-level='1']:checked").map((index, element) => $(element).data()).get();
+            let checkedOptionsLegendHtml = checkedOptions.length
+                ? checkedOptions.map(a => {
+                    let baseWMSLegendUrl = `${this.mapServerHost}/geoserver/${a.workspace}/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=${a.workspace}:${a.layer}`;
+                    return `<div class="leaflet-control-wms-legend leaflet-control"><img class="wms-legend" src="${baseWMSLegendUrl}"/></div>`;
+                }).join("\n")
+                : "";
+            this.mapLegend.empty().html(checkedOptionsLegendHtml);
+            if (checked) {
                 setTimeout(() => {
                     $("input.form-check-input[type='checkbox'][data-level='2']").prop("checked", false).trigger("change");
-                    let [wmsLayer, baseWMSLegendUrl] = this.createLayerAndLegend(workspace, layer);
-                    wmsLayer.addTo(this.map);
-                    let wmsLegend = L.wmsLegend(baseWMSLegendUrl, this.map);
-                    $(e.currentTarget).data("wmsLayer", wmsLayer);
-                    $(e.currentTarget).data("wmsLegend", wmsLegend);
+                    let newWmsLayer = this.fetchRasterLayer(workspace, layer);
+                    newWmsLayer.addTo(this.map);
+                    $(e.currentTarget).data("wmsLayer", newWmsLayer);
                 }, 0);
-            } else{
-                let wmsLayer = $(e.currentTarget).data("wmsLayer");
-                let wmsLegend = $(e.currentTarget).data("wmsLegend");
-                if(wmsLayer) this.map.removeLayer(wmsLayer);
-                if(wmsLegend) this.map.removeControl(wmsLegend);
             }
             let allSiblingsChecked = $("input.form-check-input[type='checkbox'][data-level='1']").get().every(option => $(option).prop("checked"));
             $("input.form-check-input[type='checkbox'][data-level='0']").prop("checked", allSiblingsChecked);
         });
-        // All points
+
+        // 3. Individual points
         $("input.form-check-input[type='checkbox'][data-level='2']").unbind("change").on("change", e => {
             let workspace = $(e.currentTarget).data("workspace");
             let layer = $(e.currentTarget).data("layer");
             let layerId = $(e.currentTarget).data("layer-id");
             let checked = $(e.currentTarget).prop("checked");
-            $("div.leaflet-top.leaflet-right").empty();
             if(checked){
                 $(`input.form-check-input[type='checkbox'][data-level='2']:not([data-layer-id='${layerId}'])`).prop("checked", false).trigger("change");
                 $("input.form-check-input[type='checkbox'][data-level='1']").prop("checked", false).trigger("change");
-                let [wmsLayer, baseWMSLegendUrl] = this.createLayerAndLegend(workspace, layer);
+                let wmsLayer = this.fetchRasterLayer(workspace, layer);
                 wmsLayer.addTo(this.map);
-                let wmsLegend = L.wmsLegend(baseWMSLegendUrl, this.map);
                 $(e.currentTarget).data("wmsLayer", wmsLayer);
-                $(e.currentTarget).data("wmsLegend", wmsLegend);
+                let baseWMSLegendUrl = `${this.mapServerHost}/geoserver/${workspace}/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=${workspace}:${layer}`;
+                this.mapLegend.empty().html(`<div class="leaflet-control-wms-legend leaflet-control"><img class="wms-legend" src="${baseWMSLegendUrl}"/></div>`);
             } else{
                 let wmsLayer = $(e.currentTarget).data("wmsLayer");
-                let wmsLegend = $(e.currentTarget).data("wmsLegend");
                 if(wmsLayer) this.map.removeLayer(wmsLayer);
-                if(wmsLegend) this.map.removeControl(wmsLegend);
             }
         });
     }
@@ -160,17 +166,16 @@ class SoilsIndex{
         });
     }
 
-    createLayerAndLegend = (workspace, layer) => {
+    fetchRasterLayer = (workspace, layer) => {
         let mapServerBaseUrl = `${this.mapServerHost}/geoserver/${workspace}`;
         let baseWMSUrl = `${mapServerBaseUrl}/wms`;
-        let baseWMSLegendUrl = `${mapServerBaseUrl}/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=${workspace}:${layer}`;
         let wmsLayer = L.tileLayer.betterWms(baseWMSUrl, {
             layers: `${layer}`,
             transparent: true,
             format: 'image/png',
             opacity: 2/3
         });
-        return [wmsLayer, baseWMSLegendUrl];
+        return wmsLayer;
     }
 
 
