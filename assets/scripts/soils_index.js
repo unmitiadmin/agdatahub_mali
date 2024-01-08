@@ -7,6 +7,8 @@ class SoilsIndex{
         this.mapFile = "mali.geojson";
         this.soilsOptionsIndexFile = "soils_layers.csv";
         this.soilsOptionsIndex = [];
+        this.soilPointsIndexFile = "soil_points_layers.csv";
+        this.soilPointsOptionsIndex = [];
         
         // Main filters
         this.filterRegion = $("select#filter-region");
@@ -41,16 +43,18 @@ class SoilsIndex{
     loadInitialData = () => {
         Promise.all([
             this.loadMapFile(),
+            this.loadCSVData(this.soilPointsIndexFile),
             this.loadCSVData(this.soilsOptionsIndexFile)
         ])
-        .then(([mapResponse, optionsResponse]) => {
+        .then(([mapResponse, pointsResponse, optionsResponse]) => {
             this.geoData = mapResponse;
             this.plotRegions();
+            this.soilPointsOptionsIndex = this.csvToArray(pointsResponse);
             this.soilsOptionsIndex = this.csvToArray(optionsResponse);
-            this.fillSoilsOptions(this.soilsOptionsIndex);
+            this.fillSoilsOptions(); // both classes and points
         })
         .then(() => this.enableLocationFilter())
-        .then(() => this.enableSoilClassOptions())
+        .then(() => this.enableSoilOptions())
         .then(() => $("input.form-check-input[type='checkbox'][data-level='0']").trigger("change"))
         .catch(err => {
             console.log(err)
@@ -59,12 +63,11 @@ class SoilsIndex{
         .finally(stopWaiting)
     }
 
-    fillSoilsOptions = (soilsOptionsIndex) => {
-        this.soilClassOptions = soilsOptionsIndex.filter(a => a.status && a.level == 1);
-        
-        let level1Options = this.soilClassOptions.map(a => {
+    fillSoilsOptions = () => {
+        // Classes options - checkbox
+        let level1Options = this.soilsOptionsIndex.filter(a => a.status && a.level == 1).map(a => {
             let acronym = a.acronym ? ` (${a.acronym})` : "";
-            return `<div class="form-check">
+            return `<div class="form-check ms-3">
                 <input class="form-check-input" type="checkbox" data-level="1" data-workspace="${a.workspace}" data-layer="${a.layer}">
                 <label class="form-check-label text-brighter">${a.layer_label}${acronym}</label>
             </div>`;
@@ -73,38 +76,70 @@ class SoilsIndex{
             <input class="form-check-input" type="checkbox" data-level="0" checked />
             <label class="form-check-label text-brighter">ALL CLASSES</label>
         </div>`;
-        this.optionTabL1.empty().html(level1All + `<div style="height: 57vh; overflow-y: scroll;">` + level1Options + `</div>`);
+        // Classes options - radio button (guised as checkbox)
+        let level2Options = this.soilPointsOptionsIndex.filter(a => a.status).map(a => {
+            return `<div class="form-check ms-3">
+                <input class="form-check-input" type="checkbox" data-level="2" data-workspace="${a.workspace}" data-layer="${a.layer}" data-layer-id="${a.id}">
+                <label class="form-check-label text-brighter">${a.layer_label}</label>
+            </div>`;
+        }).join("\n");
+        let level2All = `<div>
+            <label class="form-check-label text-brighter">SOIL PARAMETERS</label>
+        </div>`;
+        // Fill the div
+        this.optionTabL1.empty().html(level1All + level1Options + level2All + level2Options);
     }
 
-    enableSoilClassOptions = () => {
+    enableSoilOptions = () => {
+        // All classes
         $("input.form-check-input[type='checkbox'][data-level='0']").unbind("change").on("change", e => {
             let checked = $(e.currentTarget).prop("checked");
             $("input.form-check-input[type='checkbox'][data-level='1']").prop("checked", checked).trigger("change");
         });
-        
+        // Individual Classes
         $("input.form-check-input[type='checkbox'][data-level='1']").unbind("change").on("change", e => {
             let workspace = $(e.currentTarget).data("workspace");
             let layer = $(e.currentTarget).data("layer");
             let checked = $(e.currentTarget).prop("checked");
-
             if(checked){
                 setTimeout(() => {
+                    $("input.form-check-input[type='checkbox'][data-level='2']").prop("checked", false).trigger("change");
                     let [wmsLayer, baseWMSLegendUrl] = this.createLayerAndLegend(workspace, layer);
                     wmsLayer.addTo(this.map);
                     let wmsLegend = L.wmsLegend(baseWMSLegendUrl, this.map);
                     $(e.currentTarget).data("wmsLayer", wmsLayer);
                     $(e.currentTarget).data("wmsLegend", wmsLegend);
-                }, 0)
-                
+                }, 0);
             } else{
                 let wmsLayer = $(e.currentTarget).data("wmsLayer");
                 let wmsLegend = $(e.currentTarget).data("wmsLegend");
                 if(wmsLayer) this.map.removeLayer(wmsLayer);
                 if(wmsLegend) this.map.removeControl(wmsLegend);
             }
-
             let allSiblingsChecked = $("input.form-check-input[type='checkbox'][data-level='1']").get().every(option => $(option).prop("checked"));
             $("input.form-check-input[type='checkbox'][data-level='0']").prop("checked", allSiblingsChecked);
+        });
+        // All points
+        $("input.form-check-input[type='checkbox'][data-level='2']").unbind("change").on("change", e => {
+            let workspace = $(e.currentTarget).data("workspace");
+            let layer = $(e.currentTarget).data("layer");
+            let layerId = $(e.currentTarget).data("layer-id");
+            let checked = $(e.currentTarget).prop("checked");
+            $("div.leaflet-top.leaflet-right").empty();
+            if(checked){
+                $(`input.form-check-input[type='checkbox'][data-level='2']:not([data-layer-id='${layerId}'])`).prop("checked", false).trigger("change");
+                $("input.form-check-input[type='checkbox'][data-level='1']").prop("checked", false).trigger("change");
+                let [wmsLayer, baseWMSLegendUrl] = this.createLayerAndLegend(workspace, layer);
+                wmsLayer.addTo(this.map);
+                let wmsLegend = L.wmsLegend(baseWMSLegendUrl, this.map);
+                $(e.currentTarget).data("wmsLayer", wmsLayer);
+                $(e.currentTarget).data("wmsLegend", wmsLegend);
+            } else{
+                let wmsLayer = $(e.currentTarget).data("wmsLayer");
+                let wmsLegend = $(e.currentTarget).data("wmsLegend");
+                if(wmsLayer) this.map.removeLayer(wmsLayer);
+                if(wmsLegend) this.map.removeControl(wmsLegend);
+            }
         });
     }
 
@@ -135,9 +170,9 @@ class SoilsIndex{
             format: 'image/png',
             opacity: 2/3
         });
-        
         return [wmsLayer, baseWMSLegendUrl];
     }
+
 
     plotRegions = () => {
         this.reloadSvgHolder();

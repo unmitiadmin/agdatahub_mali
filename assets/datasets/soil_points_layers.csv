@@ -1,0 +1,3 @@
+id,workspace,layer,layer_label,status
+1,MaliSoilPoints,cec_0_5cm_mean,CEC (0-5 cm mean),1
+2,MaliSoilPoints,cec_0_5cm_mean,Dummy (Repeat of CEC),1
