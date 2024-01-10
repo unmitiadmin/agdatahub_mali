@@ -78,17 +78,24 @@ class SoilsIndex{
             <label class="form-check-label text-brighter">ALL CLASSES</label>
         </div>`;
         // Classes options - radio button (guised as checkbox)
-        let level2Options = this.soilPointsOptionsIndex.filter(a => a.status).map(a => {
-            return `<div class="form-check ms-3">
-                <input class="form-check-input" type="checkbox" data-level="2" data-workspace="${a.workspace}" data-layer="${a.layer}" data-layer-id="${a.id}">
-                <label class="form-check-label text-brighter">${a.layer_label}</label>
+        let soilDepths = this.uqArray(this.soilPointsOptionsIndex.map(a => a.depth));        
+        let level2Options = soilDepths.map(a => {
+            let depthOptions = this.soilPointsOptionsIndex.filter(b => b.status && b.depth == a).map(b => {
+                return `<div class="form-check ms-3">
+                    <input class="form-check-input" type="checkbox" data-level="2" data-workspace="${b.workspace}" data-layer="${b.layer}" data-layer-id="${b.id}">
+                    <label class="form-check-label text-brighter">
+                        ${b.layer_label} (${b.units})
+                        <i class="fa fa-info-circle" title="${b.info}"></i>
+                    </label>
+                </div>`;
+            }).join("\n");
+            return `<div>
+                <label class="form-check-label text-brighter">SOIL PARAMETERS (at ${a} depth)</label>
+                ${depthOptions}
             </div>`;
         }).join("\n");
-        let level2All = `<div>
-            <label class="form-check-label text-brighter">SOIL PARAMETERS</label>
-        </div>`;
         // Fill the div
-        this.optionTabL1.empty().html(level1All + level1Options + level2All + level2Options);
+        this.optionTabL1.empty().html(level1All + level1Options + level2Options);
     }
 
     enableSoilOptions = () => {
@@ -251,5 +258,6 @@ class SoilsIndex{
         return data;
     }
 
+    uqArray = (arr) => [...new Set(arr)];
     num = (val) => !isNaN(val) ? parseFloat(val) : 0;
 }
