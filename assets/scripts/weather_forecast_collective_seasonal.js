@@ -18,6 +18,7 @@ class ForecastCollectiveSeasonal{
         this.forecastGraphCard = $("div#card-fcollseasonal-graph");
         this.forecastGraph  = $("div#chart-fcollseasonal");
         this.forecastSummary = $("div#fcollseasonal-summary");
+        this.nmmeColors = {"Above Normal": "green", "Near Normal": "blue", "Below Normal": "orange"};
     }
 
     execute = () => {
@@ -43,11 +44,11 @@ class ForecastCollectiveSeasonal{
                 alert(response.message);
             }
         })
-        // .catch(err => {
-        //     let errMsg = JSON.parse(err.responseText).message;
-        //     alert(`Unable to get forecast data\n${errMsg} for this commune`);
-        //     console.error(err);
-        // })
+        .catch(err => {
+            let errMsg = JSON.parse(err.responseText).message;
+            alert(`Unable to get forecast data\n${errMsg} for this commune`);
+            console.error(err);
+        })
         .finally(() => stopWaiting());
     }
 
@@ -73,16 +74,26 @@ class ForecastCollectiveSeasonal{
         if(responseData.length){
             let chartData = {
                 "8": {
-                    categories: responseData.map(a => a.date),
-                    yAxis: [{labels: {format: '{value}'}, title: {text: 'Rainfall (mm)'},  allowDecimals: false},],
-                    series: [{name: 'Rainfall', type: 'column', tooltip: {valueSuffix: ' mm'}, data: responseData.map(e => !isNaN(e.rainfall) ? this.int(e.rainfall) : null), color: '#69ccc3'},                ]
+                    categories: this.uqArray(responseData.map(a => a.forecast_period)),
+                    yAxis: [{labels: {format: '{value}'}, title: {text: 'Probability (%)'},  allowDecimals: false},],
+                    series: Object.keys(this.nmmeColors).map(a => {
+                        return {
+                            "name": a,
+                            "data": responseData.filter(b => b.tertiary_class == a).map(b => !isNaN(b.prob) ? this.float1(b.prob) : null),
+                            "color": this.nmmeColors[a]
+                        }
+                    })
                 },
             };
 
-            let weatherCards = responseData.map(a => {
+            let weatherCards = this.uqArray(responseData.map(a => a.forecast_period)).map(a => {
+                let outlookProbability = Object.keys(this.nmmeColors).map(b => {
+                    let probability = responseData.find(c => c.forecast_period == a && c.tertiary_class == b)?.prob || 0;
+                    return `<p><b>${b} Probability:</b>&nbsp;${this.float1(probability)}%</p>`
+                }).join("\n");
                 return `<div class="card card-shadow ms-1 me-1 mt-1 mb-1 p-3" style="background-color: #dffffc33">
-                    <p class="mb-3 mt-3"><b>Date: ${a.date}</b></p>
-                    <p><b>Rainfall:</b> ${!isNaN(a.rainfall) ? (this.int(a.rainfall) ? this.int(a.rainfall) : 0) + " mm": "N/A"}</p>
+                    <p class="mb-3 mt-3"><b>Forecast Period: ${a}</b></p>
+                    ${outlookProbability}
                 </div>`;
             })
             this.forecastSummary.empty().html(weatherCards);
@@ -91,13 +102,13 @@ class ForecastCollectiveSeasonal{
                 chart: {type: 'column'},
                 title: {text: ''},
                 subtitle: {text: ''},
-                legend: {enabled: false},
+                legend: {enabled: true},
                 credits: {enabled: true},
                 exporting: {enabled: false},
-                plotOptions: {column: {colorByPoint: false, label: {enabled: false}}, spline: {label: {enabled: false}}},
+                plotOptions: {column: {label: {enabled: false}}, spline: {label: {enabled: false}}},
                 xAxis: {categories: chartData[dataSrcId].categories, crosshair: true, title: {text: "Forecast Period"}},
-                yAxis: {title: {"text": "Rainfall"}},
-                tooltip: {shared: true},
+                yAxis: {title: {"text": "Probability (%)"}},
+                tooltip: {shared: true, valueSuffix: " %"},
                 series: chartData[dataSrcId].series
             });
 
