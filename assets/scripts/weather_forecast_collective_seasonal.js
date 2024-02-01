@@ -83,7 +83,7 @@ class ForecastCollectiveSeasonal{
                             "color": this.nmmeColors[a]
                         }
                     })
-                },
+                }, 
             };
 
             let weatherCards = this.uqArray(responseData.map(a => a.forecast_period)).map(a => {
