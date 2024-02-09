@@ -1,4 +1,4 @@
-const weatherApiUrl = "http://15.206.6.122:8085";
+const weatherApiUrl = "http://3.14.75.159:8085";
 // const weatherApiUrl = "http://localhost:8000";
 
 const startWaiting = () => {
