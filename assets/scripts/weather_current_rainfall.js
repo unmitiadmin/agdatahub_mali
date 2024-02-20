@@ -102,36 +102,31 @@ class CurrentRainfall{
             "fromDate": this.hmFromDate.val() || null,
             "toDate": this.hmToDate.val() || null
         }
-        Promise.all([
-            this.post(`current_${temporalLevel}_rainfall`, this.hmReq),
-            this.post(`historic_${temporalLevel}_rainfall`, this.hmReq)
-        ])
-        .then(([currentRf, historicRf]) => {
-            if(currentRf.status && historicRf){
-                let currentData = currentRf.data;
+        this.post(`current_${temporalLevel}_rainfall`, this.hmReq)
+        .then(response => {
+            if(response.status){
+                let currentData = response.data.cy_data;
                 let currentVals = currentData[this.temporalFillers[temporalLevel]["rf_vals"]];
                 let currentStats = currentData[this.temporalFillers[temporalLevel]["rf_stats"]];
                 this.renderHowMuch(currentVals, currentStats, temporalLevel);
-
-                let gaugeTitle = currentRf.data[`${temporalLevel}_rf_stats`].total >= historicRf.data.hist_rf_avg
-                    ? `${parseInt(((currentRf.data[`${temporalLevel}_rf_stats`].total - historicRf.data.hist_rf_avg)*100)/historicRf.data.hist_rf_avg)}%  more than last 30 years avg<br/>(Historical average being ${historicRf.data.hist_rf_avg} mm)`
-                    : `${parseInt(((historicRf.data.hist_rf_avg- currentRf.data[`${temporalLevel}_rf_stats`].total)*100)/historicRf.data.hist_rf_avg)}%  less than last 30 years avg<br/>(Historical average being ${historicRf.data.hist_rf_avg} mm)`;
+                let historicData = response.data.py_data;
+                let gaugeTitle = currentData[`${temporalLevel}_rf_stats`].total >= historicData.hist_rf_avg
+                    ? `${parseInt(((currentData[`${temporalLevel}_rf_stats`].total - historicData.hist_rf_avg)*100)/historicData.hist_rf_avg)}%  more than last 30 years avg<br/>(Historical average being ${historicData.hist_rf_avg} mm)`
+                    : `${parseInt(((historicData.hist_rf_avg- currentData[`${temporalLevel}_rf_stats`].total)*100)/historicData.hist_rf_avg)}%  less than last 30 years avg<br/>(Historical average being ${historicData.hist_rf_avg} mm)`;
                 let compChartData = {
-                    "cyVal": parseInt(currentRf.data[`${temporalLevel}_rf_stats`].total), 
-                    "pyAvgVal": parseInt(historicRf.data.hist_rf_avg),
+                    "cyVal": parseInt(currentData[`${temporalLevel}_rf_stats`].total), 
+                    "pyAvgVal": parseInt(historicData.hist_rf_avg),
                     "titleText": gaugeTitle
                 }
                 this.renderComparison(compChartData);
-
-            } else throw new Error(currentRf.message || historicRf.message)
+            } else throw new Error(response.message)
         })
         .catch(err => {
-            // let errMsg = JSON.parse(err.responseText).message;
-            alert(`Unable to get ${temporalLevel} data for current year`);
+            let errMsg = JSON.parse(err.responseText).message || err;
+            alert(`Unable to get ${temporalLevel} data for current year\n${errMsg}`);
             console.error(err);
         })
         .finally(() => stopWaiting());
-
     }
 
     renderHowMuch = (chartData, statsData, temporalLevel) => {
