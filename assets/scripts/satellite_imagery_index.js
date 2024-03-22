@@ -187,6 +187,7 @@ class FaoSatImg{
     }
 
     createLayerAndLegend = (workspace, layer, path) => {
+        this.chosenYearDekad = `${this.filterYear.val()}-${this.filterDekad.val()}`;
         workspace = workspace.replace("<year-dekad>", this.chosenYearDekad);
         let layerWMSUrl = `${this.mapServerHost}/wms/${path}/v1?version=1.3.0&layers=${workspace}:${layer}`;
         let wmsLayer = L.tileLayer.betterWms(layerWMSUrl, {
